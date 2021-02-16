@@ -5,7 +5,7 @@
 # youtube: https://www.youtube.com/channel/UCyoQWc93GZRlYl1LL7J5MrQ
 # github: https://github.com/prodigiousMind/
 # 
-# blizzardwrap is an open-source tool for encoding and decoding written in python3.
+# blizzardwrap is a CLI (command line interface) tool for encoding and decoding written in python3.
 # blizzardwrap supports url,htmlentities,binary,hexadecimal,hexcode,rot,base64,base32,base16,base85,binary2hex,hex2binary encoding & decoding
 # read README.md for more.
 
