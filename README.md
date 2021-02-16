@@ -9,7 +9,7 @@
                                         
 
 # blizzardwrap
-BlizzardWrap - is an open-source tool for encoding and decoding written in python3
+BlizzardWrap - is a CLI (command line interface) tool for encoding and decoding written in python3
 and can be used for encoding or decoding in several formats.
 like url,htmlentities,binary,hexadecimal,hexcode,rot,base64,base32,base16,base85,binary2hex,hex2binary encoding or decoding.
 
