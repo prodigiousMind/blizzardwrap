@@ -19,6 +19,7 @@ from _libraries.urlShredder import urlShredder
 from _libraries.baseX import Base32, Base64, Base16, Base85, help, mHelp
 from _libraries.rotInL import rotInL
 from _libraries.htmlEntities import html
+from _libraries.morseCode import morseCode
 from _libraries.biex import hexadecimal,hexcode,binary, binNhex
 
 colorama.init()
