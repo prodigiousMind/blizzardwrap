@@ -129,6 +129,7 @@ optional arguments:
   -b2h, --bin2hex       binary to hexadecimal
   -h2b, --hex2bin       hexadecimal to binary
   -html, --htmlcode     html encode or decode
+  -mc, --morsecode      morsecode encode or decode
   
   -e, --encode          encode 
   -d, --decode          decode 
