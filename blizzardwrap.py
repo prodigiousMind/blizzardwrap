@@ -58,7 +58,7 @@ args=parser.parse_args()
 try:
     if len(sys.argv)>=2:
 
-        if len(sys.argv)==2 and args.help or len(sys.argv)==2 and args.string or len(sys.argv)==3 and args.string and args.help:
+        if len(sys.argv)==2 and args.help or len(sys.argv)==2 and args.string or len(sys.argv) and args.string and args.help:
             print(mHelp().help())
 
         if args.url:
