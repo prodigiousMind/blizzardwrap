@@ -44,6 +44,7 @@ parser.add_argument('-bin','--binary',action='store_true', help="binary encode o
 parser.add_argument('-b2h','--bin2hex',action='store_true', help="binary to hexadecimal")
 parser.add_argument('-h2b','--hex2bin',action='store_true', help="hexadecimal to binary")
 parser.add_argument('-html','--htmlcode',action='store_true', help="html encode or decode")
+parser.add_argument('-mc','--morsecode',action='store_true', help="morsecode encode or decode")
 parser.add_argument('-e','--encode', action="store_true",help="encode")
 parser.add_argument('-d','--decode',action="store_true",help="decode")
 parser.add_argument('string',nargs='*', help="string to encode or decode")
@@ -98,8 +99,20 @@ try:
                     print("blizzardwrap --rot [num]", termcolor.colored(text="-e/-d", color="red"), "\"string\"")
 
             else:
-                parser.print_help()
-
+                parser.print_help()                
+        
+        if args.morsecode:
+            if args.help:
+                print(morseCode("0").help())
+            elif args.encode:
+                if args.string:
+                    print(morseCode(args.string).encode())
+            elif args.decode:
+                if args.string:
+                    print(morseCode(args.string).decode())
+            else:
+                print("blizzardwrap --morsecode", termcolor.colored(text="-e/-d", color="red"),
+                      "\"string\"")
 
         if args.base:
             if args.help:
