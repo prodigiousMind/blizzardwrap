@@ -38,7 +38,7 @@ if len(notInstalled) >= 1:
                 os.system("python3 -m pip install " + " ".join(notInstalled))
 
             elif "Windows" or "windows" or "WINDOWS" in platform.platform().upper().split("-"):
-                print(platform.platform().upper().split("-"))
+                
                 os.system("python -m pip install " + " ".join(notInstalled))
             
             else:
