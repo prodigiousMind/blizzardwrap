@@ -73,7 +73,7 @@ try:
                 print(urlShredder("0", "0").help())
 
 
-            elif args.decode and args.url!="f" and args.url!="h":
+            elif args.decode:
                 if args.string:
                     print(urlShredder(args.string, "0").decode())
                 else:
