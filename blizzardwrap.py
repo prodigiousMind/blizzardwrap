@@ -368,15 +368,14 @@ try:
                     print("blizzardwrap --url h "+termcolor.colored(text="-e", color="red") + " "+"\"string\"")
 
             else:
-              if args.help and args.url=='h':
-                print(urlShredder("0", "0").help())
-
-              elif args.help==False:
+              if args.help==False:
                 print("blizzardwrap --url", termcolor.colored(text="f/h -e", color="red"),
                       "\"string\"")
-
                 print("blizzardwrap --url", termcolor.colored(text="-d", color="red"),
                       "\"string\"")
+                print("blizzardwrap --url", termcolor.colored(text="-h", color="red"),
+                      " (for more help)")
+                
               else:
                 pass
 
