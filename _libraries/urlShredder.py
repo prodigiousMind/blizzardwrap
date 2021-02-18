@@ -433,9 +433,11 @@ class urlShredder():
     usage: blizzardwrap --url f/h --encode/--decode "string"               
            blizzardwrap -u f/h -e/-d "string"
 
-           -u f, --url f       [URL encode or decode]
-                               with 'f'...each character will be encoded
+           -u f -e, --url f --encode         [URL encode]
+                                             with 'f'...each character will be encoded
                                 
-           -u h, --url h       [URL encode or decode]
-                               with 'h'...only non-alphanumeric character will be encoded'''
+           -u h -e, --url h --encode         [URL encode]
+              [by default enabled]           with 'h'...only non-alphanumeric character will be encoded
+           
+           -u -d, --url --decode             [URL decode]'''
 
