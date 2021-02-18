@@ -258,9 +258,40 @@ class urlShredder():
 
             if len(each)>=2 and indx < len(temp):
                 # taking only first two indexes
+                
                 each1 = '%' + str(each)[:2].upper()
+                
+                # could have done the other way ... but by doing this its way easier
+                if '%'+str(temp[indx])=="%E2" and temp[indx+1:] and temp[indx+2:]:
 
-                if each1 in self.translator.values():
+                    each3='%'+str(temp[indx]).upper()+'%'+str(temp[indx+1]).upper()+'%'+str(temp[indx+2]).upper()[:2]
+                    
+                    exceptions=['%E2%80%98',
+                                '%E2%80%99',
+                               '%E2%80%9C',
+                               '%E2%80%9D',
+                               '%E2%80%A2',
+                               '%E2%80%93',
+                               '%E2%80%94',
+                               '%E2%80%9A',
+                               '%E2%80%9E',
+                               '%E2%80%A6',
+                               '%E2%80%A0',
+                               '%E2%80%A1',
+                               '%E2%80%B0',
+                               '%E2%80%B9']
+                    if each3 in exceptions:
+
+                        indxOf = _values.index(each3.upper())
+
+                        self.finalDecoded.append(_keys[indxOf])
+                        self.finalDecoded.append(temp[indx + 2][2:] if temp[indx + 2][2:] else '')
+                        # increase by 3
+                        indx += 3
+                        # first time in 3rd index
+                        return '13'
+
+                elif each1 in self.translator.values():
                     #if each1 in values then store the index in a variable
                     indxOf = _values.index(each1)
                     #append the key of that value in decoded list
@@ -384,9 +415,12 @@ class urlShredder():
 
     def help(self):
         return '''
-    usage: blizzardwrap --url --encode/--decode "string"               
-           blizzardwrap -u -e/-d "string"
+    usage: blizzardwrap --url f/h --encode/--decode "string"               
+           blizzardwrap -u f/h -e/-d "string"
 
-           -u, --url        [URL encode or decode]
-           '''
+           -u f, --url f       [URL encode or decode]
+                               with 'f'...each character will be encoded
+                                
+           -u h, --url h       [URL encode or decode]
+                               with 'h'...only non-alphanumeric character will be encoded'''
 
