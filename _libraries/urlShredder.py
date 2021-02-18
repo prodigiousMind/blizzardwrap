@@ -437,7 +437,7 @@ class urlShredder():
                                              with 'f'...each character will be encoded
                                 
            -u h -e, --url h --encode         [URL encode]
-              [by default enabled]           with 'h'...only non-alphanumeric character will be encoded
+                                             with 'h'...only non-alphanumeric character will be encoded
            
            -u -d, --url --decode             [URL decode]'''
 
