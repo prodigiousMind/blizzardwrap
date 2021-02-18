@@ -2,9 +2,10 @@
 
 
 class urlShredder():
-    def __init__(self, string):
+    def __init__(self, string, whto):
 
         self.string=string
+        self.whto=whto
         self.finalEncoded=[]
         self.finalDecoded=[]
         # a dictionary that'll work as a translator
@@ -229,15 +230,29 @@ class urlShredder():
 
     # method for encoding
     def encode(self):
-        self.string=" ".join(self.string)
+        self.string = " ".join(self.string)
+        if self.whto == "h":
+            for each in self.string:
+                if not str(each).isalnum():
+                    if str(each) in self.translator.keys():
+                        self.finalEncoded.append(self.translator[each])
+                    else:
+                        self.finalEncoded.append(each)
+                else:
+                    self.finalEncoded.append(each)
 
-        for each in self.string:
-            if str(each) in self.translator.keys():
-                self.finalEncoded.append(self.translator[each])
-            else:
-                self.finalEncoded.append(each)
-        return "".join(self.finalEncoded)
+            return "".join(self.finalEncoded)
+        elif self.whto == "f":
+            for each in self.string:
+                if str(each) in self.translator.keys():
+                    self.finalEncoded.append(self.translator[each])
+                else:
+                    self.finalEncoded.append(each)
 
+            return "".join(self.finalEncoded)
+        else:
+            return self.help()
+        
     # method for decoding
     def decode(self):
 
