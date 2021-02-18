@@ -16,26 +16,29 @@ like URL,MorseCode,HTMLEntities,Binary,Hexadecimal,Hexcode,ROT,Base64,Base32,Bas
 
 
 How to install?
-you can simply clone this whole repository and use it.
-or you can download it in a compressed file format.
+> You can simply clone this whole repository and use it.
+> or you can download it in a compressed file format.
+
 ![plot](./_pics/first.png)
 ![plot](./_pics/gitclone.png)
 
+
 After installing?
-python3 -m pip install -r requirement.txt   (for linux and macOS)
+> python3 -m pip install -r requirement.txt   (for linux and macOS)
 Or
-python -m pip install -r requirement.txt    (for windows)
+> python -m pip install -r requirement.txt    (for windows)
 
 OR Just Run setup.py
-run setup.py by:
-python3 setup.py
+> python3 setup.py
+
 ![plot](./_pics/setup.png)
 
 
-python3 blizzardwrap.py -h
+> python3 blizzardwrap.py -h
+> 
 ![plot](./_pics/help.png)
 
-python3 blizzardwrap.py -h [argument]   (for more help)
+> python3 blizzardwrap.py -h [argument]   (for more help)
 ![plot](./_pics/b2h.png)
 ![plot](./_pics/hexadecimal.png)
   
