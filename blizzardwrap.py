@@ -38,7 +38,7 @@ parser = argparse.ArgumentParser(description=termcolor.colored(text=str("blizzar
 # adding all argumets
 
 parser.add_argument('-h', '--help', action='store_true', help="show help or exit")
-parser.add_argument('-u', '--url', action='store_true', help="url encode or decode")
+parser.add_argument('-u', '--url',choices=['f', 'h'], help="url encode or decode")
 parser.add_argument('-r', '--rot',
                     choices=['bf', 'bruteforce', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
                              '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27'],
@@ -68,22 +68,46 @@ try:
 
         if args.url:
             if args.help:
-                print(urlShredder("0").help())
-            elif args.encode:
-                if args.string:
-                    print(urlShredder(args.string).encode())
+                print(urlShredder("0", "0").help())
+            elif args.url:
+                if args.encode and args.url=='f':
+                    if args.string:
+                        print(urlShredder(args.string, "f").encode())
+                    else:
+                        print("blizzardwrap --url f --encode/-e \"" + termcolor.colored(text="string", color="red") +
+                                  "\"")
+                elif args.decode:
+                    if args.string:
+                        print(urlShredder(args.string, "f").decode())
+                    else:
+                        print("blizzardwrap --url --decode/-d \"" + termcolor.colored(text="string", color="red") +
+                                  "\"")
                 else:
-                    print("blizzardwrap --url --encode/-e \"" + termcolor.colored(text="string", color="red") +
-                              "\"")
-            elif args.decode:
-                if args.string:
-                    print(urlShredder(args.string).decode())
+                    print("blizzardwrap --url", termcolor.colored(text="f -e", color="red"),
+                          "\"string\"")
+                    print("blizzardwrap --url", termcolor.colored(text="-d", color="red"),
+                          "\"string\"")
+                    
+            elif args.url:
+                if args.encode and args.url=='h':
+                    if args.string:
+                        print(urlShredder(args.string, "h").encode())
+                    else:
+                        print("blizzardwrap --url h --encode/-e \"" + termcolor.colored(text="string", color="red") +
+                                  "\"")
+                elif args.decode:
+                    if args.string:
+                        print(urlShredder(args.string, "h").decode())
+                    else:
+                        print("blizzardwrap --url --decode/-d \"" + termcolor.colored(text="string", color="red") +
+                                  "\"")
                 else:
-                    print("blizzardwrap --url --decode/-d \"" + termcolor.colored(text="string", color="red") +
-                              "\"")
+                    print("blizzardwrap --url", termcolor.colored(text="h -e", color="red"),
+                          "\"string\"")
+                    print("blizzardwrap --url", termcolor.colored(text="-d", color="red"),
+                          "\"string\"")
             else:
-                print("blizzardwrap --url", termcolor.colored(text="-e/-d", color="red"),
-                      "\"string\"")
+                print(urlShredder("0", "0").help())
 
         if args.rot:
             if args.help:
