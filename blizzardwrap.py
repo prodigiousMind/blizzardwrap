@@ -63,7 +63,7 @@ try:
     if len(sys.argv) >= 2:
 
         if len(sys.argv) == 2 and args.help or len(sys.argv) == 2 and args.string or len(
-                sys.argv) and args.string and args.help and not args.url:
+                sys.argv) and args.string and args.help and args.url=='h':
             print(mHelp().help())
 
 
