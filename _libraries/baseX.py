@@ -116,6 +116,7 @@ positional arguments:
 optional arguments:
   -h, --help            show help or exit
   -u, --url             url encode or decode
+                        [f or h]
   
   -r, --rot             rotN encode or decode
                         [0 to 26 & 27,bf,bruteforce]
