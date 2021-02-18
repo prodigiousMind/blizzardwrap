@@ -30,8 +30,14 @@ if len(notInstalled)>=1:
             print("blizzardwrap wants to install these libraries "+str(termcolor.colored(text=" ".join(notInstalled), color='blue')) if len(notInstalled)>1 else "blizzardwrap wants to install this library "+str(termcolor.colored(text=" ".join(notInstalled), color='blue')))
             whatToDo=input("Install or not? ("+str(termcolor.colored(text="Y", color="green"))+" or "+str(termcolor.colored(text="N", color="red"))+"): ")[:3].upper()
             if whatToDo=="YES" or whatToDo=="Y":
-                os.system("python -m pip install "+" ".join(notInstalled))
-                os.system("python3 -m pip install " + " ".join(notInstalled))
+            	if "Windows" or "windows" in platform.platform().upper().split("-"):
+	                os.system("python -m pip install "+" ".join(notInstalled))
+	            elif "Linux" or "linux" in platform.platform().upper().split("-"):
+	                os.system("python3 -m pip install " + " ".join(notInstalled))
+	            else:
+	            	os.system("python -m pip install "+" ".join(notInstalled))
+	            	os.system("pthon3 -m pip install "+" ".join(notInstalled))
+
 
             elif whatToDo=="NO" or whatToDo=="N":
                 print(termcolor.colored(text="Manually download "+" ".join(notInstalled),color="blue"))
