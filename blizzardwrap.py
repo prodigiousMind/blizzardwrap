@@ -77,7 +77,7 @@ try:
                 if args.string:
                     print(urlShredder(args.string, "0").decode())
                 else:
-                    print("blizzardwrap --url --decode/-d \"" + termcolor.colored(text="string", color="red") +
+                    print("blizzardwrap --url f/h --decode/-d \"" + termcolor.colored(text="string", color="red") +
                               "\"")
 
             elif args.url=="f":
@@ -105,7 +105,7 @@ try:
               
                 print("blizzardwrap --url", termcolor.colored(text="f/h -e", color="red"),
                       "\"string\"")
-                print("blizzardwrap --url", termcolor.colored(text="-d", color="red"),
+                print("blizzardwrap --url", termcolor.colored(text="f/h -d", color="red"),
                       "\"string\"")
                 print("blizzardwrap --url", termcolor.colored(text="-h", color="red"),
                       " (for more help)")
