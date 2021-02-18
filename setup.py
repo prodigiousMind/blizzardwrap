@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 
 
-
 import os
 import pkg_resources
 import colorama
 import termcolor
-import platform 
+import platform
 from distutils.dir_util import copy_tree
-
 
 colorama.init()
 
 getPackages = pkg_resources.working_set
 getPackagesList = sorted(["{:s}=={:s}".format(one.key, one.version) for one in getPackages])
-notInstalled=[]
+notInstalled = []
 
 for each in getPackagesList:
     if "colorama" in each:
@@ -23,30 +21,36 @@ for each in getPackagesList:
         notInstalled.append(each)
     else:
         pass
-if len(notInstalled)>=1:
-    for r in range(1):
-        try:
-            print(str(termcolor.colored(text="[Warning]:", color="red"))+"\nFollowing libraries not installed: " if len(notInstalled)>1 else "[Warning:]\nFollowing library not installed: ")
-            print("blizzardwrap wants to install these libraries "+str(termcolor.colored(text=" ".join(notInstalled), color='blue')) if len(notInstalled)>1 else "blizzardwrap wants to install this library "+str(termcolor.colored(text=" ".join(notInstalled), color='blue')))
-            whatToDo=input("Install or not? ("+str(termcolor.colored(text="Y", color="green"))+" or "+str(termcolor.colored(text="N", color="red"))+"): ")[:3].upper()
-            if whatToDo=="YES" or whatToDo=="Y":
-            	if "Windows" or "windows" in platform.platform().upper().split("-"):
-	            os.system("python -m pip install "+" ".join(notInstalled))
-	        elif "Linux" or "linux" in platform.platform().upper().split("-"):
-	            os.system("python3 -m pip install " + " ".join(notInstalled))
-	        else:
-	            os.system("python -m pip install "+" ".join(notInstalled))
-	            os.system("pthon3 -m pip install "+" ".join(notInstalled))
+if len(notInstalled) >= 1:
 
-
-            elif whatToDo=="NO" or whatToDo=="N":
-                print(termcolor.colored(text="Manually download "+" ".join(notInstalled),color="blue"))
+    try:
+        print(
+            str(termcolor.colored(text="[Warning]:", color="red")) + "\nFollowing libraries not installed: " if len(
+                notInstalled) > 1 else "[Warning:]\nFollowing library not installed: ")
+        print("blizzardwrap wants to install these libraries " + str(
+            termcolor.colored(text=" ".join(notInstalled), color='blue')) if len(
+            notInstalled) > 1 else "blizzardwrap wants to install this library " + str(
+            termcolor.colored(text=" ".join(notInstalled), color='blue')))
+        whatToDo = input("Install or not? (" + str(termcolor.colored(text="Y", color="green")) + " or " + str(
+            termcolor.colored(text="N", color="red")) + "): ")[:3].upper()
+        if whatToDo == "YES" or whatToDo == "Y":
+            if "Windows" or "windows" in platform.platform().upper().split("-"):
+                os.system("python -m pip install " + " ".join(notInstalled))
+            elif "Linux" or "linux" in platform.platform().upper().split("-"):
+                os.system("python3 -m pip install " + " ".join(notInstalled))
             else:
-                print(termcolor.colored(text="Invalid input...try again!", color="red"))
-        except:
-            print(termcolor.colored("Could'nt be installed...Please manually install them", color="red"))
+                os.system("python -m pip install " + " ".join(notInstalled))
+                os.system("pthon3 -m pip install " + " ".join(notInstalled))
 
 
+        elif whatToDo == "NO" or whatToDo == "N":
+            print(termcolor.colored(text="Manually download " + " ".join(notInstalled), color="blue"))
+        else:
+            print(termcolor.colored(text="Invalid input...try again!", color="red"))
+    except:
+        print(termcolor.colored("Could'nt be installed...Please manually install them", color="red"))
+else:
+    print(str(termcolor.colored(text="Everything is all set up!", color="blue")))
 '''
 try:
 	if "LINUX" in platform.platform().upper().split("-"):
@@ -54,7 +58,7 @@ try:
 		print("By doing so you can simply type blizzardwrap and use it")
 		doIt=input("("+str(termcolor.colored(text="Y", color="green"))+" or "+str(termcolor.colored(text="N", color="red"))+"): ")[:3].upper()
 		if doIt=="Y" or doIt=="YES":
-			
+
 			copy_tree(src="../blizzardwrap/", dst="/usr/bin/blizzardwrap/")			
 			print(str(termcolor.colored(text="Successfully done!", color="blue")))
 			print("Now just type blizzardwrap -h")
