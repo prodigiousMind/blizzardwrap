@@ -18,6 +18,8 @@ like URL,MorseCode,HTMLEntities,Binary,Hexadecimal,Hexcode,ROT,Base64,Base32,Bas
 How to install?
 you can simply clone this whole repository and use it.
 or you can download it in a compressed file format.
+![plot](./_pics/first.png)
+![plot](./_pics/gitclone.png)
 
 After installing?
 python3 -m pip install -r requirement.txt   (for linux and macOS)
@@ -27,44 +29,13 @@ python -m pip install -r requirement.txt    (for windows)
 OR Just Run setup.py
 run setup.py by:
 python3 setup.py
+![plot](./_pics/setup.png)
 
 
 python3 blizzardwrap.py -h
-for more help type:
-python3 blizzardwrap.py [argument] -h
-example: python3 blizzardwrap.py --url -h
+![plot](./_pics/help.png)
 
-usage: blizzardwrap.py [arguments] [--encode/--decode] OR [-e/-d] "[string]"
-                                                                                                              
-Example: blizzardwrap.py --url --encode "blizzardwrap"                                                        
-         blizzardwrap.py --rot 13 --decode  "oyvmmneqjenc"                                                    
-type: blizzardwrap -h [argument]    (for more help)
-
-blizzardwrap
-
-positional arguments:
-  string                string to encode or decode
-
-optional arguments:
-  -h, --help            show help or exit
-  -u, --url             url encode or decode
-                              [f or h]
-  
-  -r, --rot             rotN encode or decode
-                        [0 to 26 & 27,bf,bruteforce]
-                        
-  -b, --base            baseX encode or decode
-                        {16,32,64,85}
-                        
-  -hc, --hexcode        hexcode encode or decode
-  -hx, --hexadecimal    hexadecimal bytes encode or decode
-  -bin, --binary        binary encode or decode
-  -b2h, --bin2hex       binary to hexadecimal
-  -h2b, --hex2bin       hexadecimal to binary
-  -html, --htmlcode     html encode or decode
-  -mc, --morsecode      morsecode encode or decode
-  
-  -e, --encode          encode 
-  -d, --decode          decode 
-  
+python3 blizzardwrap.py -h [argument]   (for more help)
+![plot](./_pics/b2h.png)
+![plot](./_pics/hexadecimal.png)
   
