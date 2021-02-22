@@ -28,7 +28,7 @@ colorama.init()
 parser = argparse.ArgumentParser(description=termcolor.colored(text=str("blizzardwrap"), color="yellow"),
                                  usage=termcolor.colored(
                                      text="blizzardwrap.py [arguments] [--encode/--decode]OR[-e/-d] \"[string]\"\n\n"
-                                          "Example: blizzardwrap.py --url --encode \"blizzardwrap\"\n"
+                                          "Example: blizzardwrap.py --url f/h --encode \"blizzardwrap\"\n"
                                           "         blizzardwrap.py --rot 13 --decode  \"oyvmmneqjenc\"\n"
                                           + str(
                                          termcolor.colored(text="type: blizzardwrap -h [argument]    (for more help)",
