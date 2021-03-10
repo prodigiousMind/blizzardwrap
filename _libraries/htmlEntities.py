@@ -4,108 +4,108 @@
 class html:
 
     def __init__(self, string):
-        self.string=string
+        self.string = string
 
-        self.finalEncoded=[]
-        self.finalDecoded=[]
+        self.finalEncoded = []
+        self.finalDecoded = []
         # dictionary for storing all keys and values for conversion
-        self.translator={
-             '!': '&#33;',
-             '"': '&#34;',
-             '#': '&#35;',
-             '$': '&#36;',
-             '%': '&#37;',
-             '&': '&amp;',
-             "'": '&#39;',
-             '(': '&#40;',
-             ')': '&#41;',
-             '*': '&#42;',
-             '+': '&#43;',
-             ',': '&#44;',
-             '-': '&#45;',
-             '.': '&#46;',
-             '/': '&#47;',
-             '0': '&#48;',
-             '1': '&#49;',
-             '2': '&#50;',
-             '3': '&#51;',
-             '4': '&#52;',
-             '5': '&#53;',
-             '6': '&#54;',
-             '7': '&#55;',
-             '8': '&#56;',
-             '9': '&#57;',
-             ':': '&#58;',
-             ';': '&#59;',
-             '<': '&lt;',
-             '=': '&#61;',
-             '>': '&gt;',
-             '?': '&#63;',
-             '@': '&#64;',
-             'A': '&#65;',
-             'B': '&#66;',
-             'C': '&#67;',
-             'D': '&#68;',
-             'E': '&#69;',
-             'F': '&#70;',
-             'G': '&#71;',
-             'H': '&#72;',
-             'I': '&#73;',
-             'J': '&#74;',
-             'K': '&#75;',
-             'L': '&#76;',
-             'M': '&#77;',
-             'N': '&#78;',
-             'O': '&#79;',
-             'P': '&#80;',
-             'Q': '&#81;',
-             'R': '&#82;',
-             'S': '&#83;',
-             'T': '&#84;',
-             'U': '&#85;',
-             'V': '&#86;',
-             'W': '&#87;',
-             'X': '&#88;',
-             'Y': '&#89;',
-             'Z': '&#90;',
-             '[': '&#91;',
-             '\\': '&#92;',
-             ']': '&#93;',
-             '^': '&#94;',
-             '_': '&#95;',
-             '`': '&#96;',
-             'a': '&#97;',
-             'b': '&#98;',
-             'c': '&#99;',
-             'd': '&#100;',
-             'e': '&#101;',
-             'f': '&#102;',
-             'g': '&#103;',
-             'h': '&#104;',
-             'i': '&#105;',
-             'j': '&#106;',
-             'k': '&#107;',
-             'l': '&#108;',
-             'm': '&#109;',
-             'n': '&#110;',
-             'o': '&#111;',
-             'p': '&#112;',
-             'q': '&#113;',
-             'r': '&#114;',
-             's': '&#115;',
-             't': '&#116;',
-             'u': '&#117;',
-             'v': '&#118;',
-             'w': '&#119;',
-             'x': '&#120;',
-             'y': '&#121;',
-             'z': '&#122;',
-             '{': '&#123;',
-             '|': '&#124;',
-             '}': '&#125;',
-             '~': '&#126;',
-             'À': '&#192;',
-             'Á': '&#193;',
+        self.translator = {
+            '!': '&#33;',
+            '"': '&#34;',
+            '#': '&#35;',
+            '$': '&#36;',
+            '%': '&#37;',
+            '&': '&amp;',
+            "'": '&#39;',
+            '(': '&#40;',
+            ')': '&#41;',
+            '*': '&#42;',
+            '+': '&#43;',
+            ',': '&#44;',
+            '-': '&#45;',
+            '.': '&#46;',
+            '/': '&#47;',
+            '0': '&#48;',
+            '1': '&#49;',
+            '2': '&#50;',
+            '3': '&#51;',
+            '4': '&#52;',
+            '5': '&#53;',
+            '6': '&#54;',
+            '7': '&#55;',
+            '8': '&#56;',
+            '9': '&#57;',
+            ':': '&#58;',
+            ';': '&#59;',
+            '<': '&lt;',
+            '=': '&#61;',
+            '>': '&gt;',
+            '?': '&#63;',
+            '@': '&#64;',
+            'A': '&#65;',
+            'B': '&#66;',
+            'C': '&#67;',
+            'D': '&#68;',
+            'E': '&#69;',
+            'F': '&#70;',
+            'G': '&#71;',
+            'H': '&#72;',
+            'I': '&#73;',
+            'J': '&#74;',
+            'K': '&#75;',
+            'L': '&#76;',
+            'M': '&#77;',
+            'N': '&#78;',
+            'O': '&#79;',
+            'P': '&#80;',
+            'Q': '&#81;',
+            'R': '&#82;',
+            'S': '&#83;',
+            'T': '&#84;',
+            'U': '&#85;',
+            'V': '&#86;',
+            'W': '&#87;',
+            'X': '&#88;',
+            'Y': '&#89;',
+            'Z': '&#90;',
+            '[': '&#91;',
+            '\\': '&#92;',
+            ']': '&#93;',
+            '^': '&#94;',
+            '_': '&#95;',
+            '`': '&#96;',
+            'a': '&#97;',
+            'b': '&#98;',
+            'c': '&#99;',
+            'd': '&#100;',
+            'e': '&#101;',
+            'f': '&#102;',
+            'g': '&#103;',
+            'h': '&#104;',
+            'i': '&#105;',
+            'j': '&#106;',
+            'k': '&#107;',
+            'l': '&#108;',
+            'm': '&#109;',
+            'n': '&#110;',
+            'o': '&#111;',
+            'p': '&#112;',
+            'q': '&#113;',
+            'r': '&#114;',
+            's': '&#115;',
+            't': '&#116;',
+            'u': '&#117;',
+            'v': '&#118;',
+            'w': '&#119;',
+            'x': '&#120;',
+            'y': '&#121;',
+            'z': '&#122;',
+            '{': '&#123;',
+            '|': '&#124;',
+            '}': '&#125;',
+            '~': '&#126;',
+            'À': '&#192;',
+            'Á': '&#193;',
             'Â': '&#194;',
             'Ã': '&#195;',
             'Ä': '&#196;',
@@ -331,58 +331,88 @@ class html:
             '♠': '&#9824;',
             '♣': '&#9827;',
             '♥': '&#9829;'
-            }
-    # method for encoding
-    def encode(self):
+        }
 
-        self.string = " ".join(self.string)
-        for each in self.string:
-            # check if each in keys or not
-            if str(each) in self.translator.keys():
+        self.shorty = {
+            " ": "&nbsp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "&": "&amp;",
+            "\"": "&quot;",
+            "'": "&apos;",
+            "¢": "&cent;",
+            "£": "&pound;",
+            "¥": "&yen;",
+            "€": "&euro;",
+            "©": "&copy;",
+            "®": "&reg;"
+        }
 
-                #if it is in keys then append with its value
-                self.finalEncoded.append(self.translator[each])
+        # method for encoding
+        def encode(self):
 
-            else:
-                # else append as it is
-                self.finalEncoded.append(each)
+            self.string = " ".join(self.string)
 
-        # return encoded string
-        return "".join(self.finalEncoded)
+            for each in self.string:
+                # check if each in keys or not
+                if str(each) in self.shorty.keys():
 
-    # method for encoding
-    def decode(self):
+                    # if it is in keys then append with its value
+                    self.finalEncoded.append(self.shorty[each])
 
-        self.string = " ".join(self.string)
-        # split...
-        temp = self.string.split("&")[1:]
+                elif str(each) in self.translator.keys():
 
-        # stor keys and values in different list
-        _keys = list(self.translator.keys())
-        _values = list(self.translator.values())
+                    # if it is in keys then append with its value
+                    self.finalEncoded.append(self.translator[each])
 
-        # iterate...
-        for one in temp:
-            # check if one in values or not
-            if '&'+str(one) in self.translator.values():
+                else:
+                    # else append as it is
+                    self.finalEncoded.append(each)
 
-                # if it is in values ... find out its index and append the same index keys value
-                _each='&'+str(one)
-                indxOf =_values.index(_each)
-                self.finalDecoded.append(_keys[indxOf])
-            else:
+            # return encoded string
+            return "".join(self.finalEncoded)
 
-                # if not in values...append as it is
-                self.finalDecoded.append('&'+str(one))
+        # method for encoding
+        def decode(self):
 
-        #take care of the first index
-        self.finalDecoded.insert(0, self.string.split("&")[0])
+            self.string = " ".join(self.string)
+            # split...
+            temp = self.string.split("&")[1:]
 
-        # return the decoded string
-        return "".join(self.finalDecoded)
+            # stor keys and values in different list
+            _keys = list(self.translator.keys())
+            _values = list(self.translator.values())
 
-    def help(self):
-        return '''
+            # iterate...
+            for one in temp:
+                # check if one in values or not
+
+                if '&' + str(one) in self.shorty.values():
+
+                    # if it is in values ... find out its index and append the same index keys value
+                    _each = '&' + str(one)
+                    indxOf = list(self.shorty.values()).index(_each)
+                    self.finalDecoded.append(list(self.shorty.values())[indxOf])
+
+                elif '&' + str(one) in self.translator.values():
+
+                    # if it is in values ... find out its index and append the same index keys value
+                    _each = '&' + str(one)
+                    indxOf = _values.index(_each)
+                    self.finalDecoded.append(_keys[indxOf])
+                else:
+
+                    # if not in values...append as it is
+                    self.finalDecoded.append('&' + str(one))
+
+            # take care of the first index
+            self.finalDecoded.insert(0, self.string.split("&")[0])
+
+            # return the decoded string
+            return "".join(self.finalDecoded)
+
+        def help(self):
+            return '''
         usage: blizzardwrap --htmlcode --encode/--decode "string"               
                blizzardwrap -html -e/-d "string"
 
