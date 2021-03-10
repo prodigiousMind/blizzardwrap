@@ -416,7 +416,7 @@ class html:
             else:
 
                 # if not in values...append as it is
-                self.finalDecoded.append('&' + str(one))
+                self.finalDecoded.append('&' + str(one) + "".join(nbsbTime) if nbspInsert == 1 else '&' + str(one))
 
         # take care of the first index
         self.finalDecoded.insert(0, self.string.split("&")[0])
