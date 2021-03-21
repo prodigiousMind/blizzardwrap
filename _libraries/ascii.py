@@ -20,13 +20,20 @@ class Ascii:
         
     def decode(self):
         decodedS=[]
+        self.string=self.string.split()
+        
         for _each in self.string:
-            try:                
-                decodedS.append(format(chr(_each)))
+            try:  
+                print(_each)
+                if _each.isdigit():
+                    decodedS.append(format(chr(int(_each))))
+                else:
+                    decodedS.append(_each)
+                    
             except:
                 decodedS.append(_each)
                 
-        return " ".join(decodedS)
+        return "".join(decodedS)
         
     def help(self):
         return '''
