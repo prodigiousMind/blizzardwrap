@@ -1,72 +1,77 @@
 #!/usr/bin/env python3
 
-#importing...
+# importing...
 import termcolor
 import colorama
 import base64
 
-
 colorama.init()
+
 
 # class for base64
 class Base64:
     def __init__(self, string):
-        self.string=' '.join(' '.join(string).split())
+        self.string = ' '.join(' '.join(string).split())
+
     # for encoding
     def encode(self):
-        stn=self.string.encode('ascii')
+        stn = self.string.encode('ascii')
 
         # return encoded string
         return base64.b64encode(stn).decode('ascii')
+
     # for decoding
     def decode(self):
-        stn=self.string
+        stn = self.string
 
         # return decoded string
         return base64.b64decode(stn).decode('ascii')
 
-#class for base32
+
+# class for base32
 class Base32:
     def __init__(self, string):
-        self.string=' '.join(' '.join(string).split())
+        self.string = ' '.join(' '.join(string).split())
 
     def encode(self):
         # for encoding
-        stn=self.string.encode('ascii')
+        stn = self.string.encode('ascii')
 
         # return encoded string
         return base64.b32encode(stn).decode('ascii')
 
     def decode(self):
         # for decoding
-        stn=self.string
+        stn = self.string
 
         # return decoded string
         return base64.b32decode(stn).decode('ascii')
 
-#class for base16
+
+# class for base16
 class Base16:
     def __init__(self, string):
-        self.string=' '.join(' '.join(string).split())
+        self.string = ' '.join(' '.join(string).split())
 
     # for encoding
     def encode(self):
-        stn=self.string.encode('ascii')
+        stn = self.string.encode('ascii')
 
         # return encoded string
         return base64.b16encode(stn).decode('ascii')
 
     # for decoding
     def decode(self):
-        stn=self.string
+        stn = self.string
 
         # return decoded string
         return base64.b16decode(stn).decode('ascii')
 
-#class for base85
+
+# class for base85
 class Base85:
     def __init__(self, string):
-        self.string=' '.join(' '.join(string).split())
+        self.string = ' '.join(' '.join(string).split())
 
     # for encoding
     def encode(self):
@@ -85,8 +90,7 @@ class Base85:
 
 class help:
     def help(self):
-
-        return    '''
+        return '''
     usage: blizzardwrap --base X --encode/--decode "string"  [X=16,32,64,85]
            blizzardwrap -b X -e/-d "string"                  [X=16,32,64,85]
 
@@ -97,18 +101,16 @@ class help:
            '''
 
 
-
-
-
-
-
 class mHelp:
     def help(self):
         return '''
-usage: '''+str(termcolor.colored(text="blizzardwrap.py [arguments] [--encode/--decode]OR[-e/-d] \"[string]\"\n\n"
-                                                            "Example: blizzardwrap.py --url --encode \"blizzardwrap\"\n"
-                                                            "         blizzardwrap.py --rot 13 --decode  \"oyvmmneqjenc\"",
-                                                            color="red"))+'\n'+str(termcolor.colored(text="type: blizzardwrap -h [argument]    (for more help)", color="yellow"))+'''\n\n'''+str(termcolor.colored(text=str("blizzardwrap"), color="blue", on_color="on_grey"))+'''
+usage: ''' + str(termcolor.colored(text="blizzardwrap.py [arguments] [--encode/--decode]OR[-e/-d] \"[string]\"\n\n"
+                                        "Example: blizzardwrap.py --url --encode \"blizzardwrap\"\n"
+                                        "         blizzardwrap.py --rot 13 --decode  \"oyvmmneqjenc\"",
+                                   color="red")) + '\n' + str(
+            termcolor.colored(text="type: blizzardwrap -h [argument]    (for more help)",
+                              color="yellow")) + '''\n\n''' + str(
+            termcolor.colored(text=str("blizzardwrap"), color="blue", on_color="on_grey")) + '''
 
 positional arguments:
   string                string to encode or decode
@@ -117,13 +119,13 @@ optional arguments:
   -h, --help            show help or exit
   -u, --url             url encode or decode
                         [f or h]
-  
+
   -r, --rot             rotN encode or decode
-                        [0 to 26 & 27,bf,bruteforce]
-                        
+                        [0 to 26, 47 & 27,bf,bruteforce]
+
   -b, --base            baseX encode or decode
                         {16,32,64,85}
-                        
+
   -hc, --hexcode        hexcode encode or decode
   -hx, --hexadecimal    hexadecimal bytes encode or decode
   -bin, --binary        binary encode or decode
@@ -131,7 +133,15 @@ optional arguments:
   -h2b, --hex2bin       hexadecimal to binary
   -html, --htmlcode     html encode or decode
   -mc, --morsecode      morsecode encode or decode
-  
+  -ai, --ascii          ascii encode or decode
+  -pc, --phonecode      phonecode/multi-tap encode or decode
+  -az, --a1z26          a1z26 encode or decode
+  -at, --atbash         atbash encode or decode
+  -ww, --wigwag         wigwag encode or decode
+  -qs, --qwertyswap     qwertyswap encode or decode
+  -vc, --vigenere       vigenere cipher encode or decode
+                        [0, a, A]
+
   -e, --encode          encode 
   -d, --decode          decode 
 '''
