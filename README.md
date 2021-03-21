@@ -11,7 +11,7 @@
 # blizzardwrap
 BlizzardWrap - is a CLI (command line interface) tool for encoding and decoding written in python3
 and can be used for encoding or decoding in several formats.
-like URL,MorseCode,HTMLEntities,Binary,Hexadecimal,Hexcode,ROT,Base64,Base32,Base16,Base85,Binary2Hex,Hex2Binary encoding & decoding.
+like URL, MorseCode, Atbash, Vigenere Ciphere, PhoneCode, WigWag, ASCII,HTMLEntities, A1Z26, Binary, Hexadecimal, Hexcode, ROT, Base64, Base32, Base16, Base85, Binary2Hex, Hex2Binary encoding & decoding
 
 
 
