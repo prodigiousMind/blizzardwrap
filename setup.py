@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 
+
+
 import os
 import pkg_resources
 #import colorama
@@ -30,16 +32,18 @@ if len(notInstalled) >= 1:
             notInstalled) > 1 else "blizzardwrap wants to install this library " + " ".join(notInstalled))
         whatToDo = input("Install or not? Y or N: ")[:3].upper()
         if whatToDo == "YES" or whatToDo == "Y":
-            if "Linux" or "linux" or "LINUX" in platform.platform().upper().split("-"):
+
+            if "LINUX" in platform.platform().upper().split("-"):
                 os.system("python3 -m pip install " + " ".join(notInstalled))
 
-            elif "Windows" or "windows" or "WINDOWS" in platform.platform().upper().split("-"):
-                
+            elif "WINDOWS" in platform.platform().upper().split("-"):                
                 os.system("python -m pip install " + " ".join(notInstalled))
             
             else:
-                os.system("python -m pip install " + " ".join(notInstalled))
-                os.system("pthon3 -m pip install " + " ".join(notInstalled))
+                try:
+                    os.system("python -m pip install " + " ".join(notInstalled))
+                except:
+                    os.system("pthon3 -m pip install " + " ".join(notInstalled))
 
 
         elif whatToDo == "NO" or whatToDo == "N":
@@ -50,6 +54,8 @@ if len(notInstalled) >= 1:
         print("Could'nt be installed...Please manually install them")
 else:
     print("Everything is all set up!")
+
+
 '''
 try:
 	if "LINUX" in platform.platform().upper().split("-"):
