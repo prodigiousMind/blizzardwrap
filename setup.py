@@ -3,12 +3,12 @@
 
 import os
 import pkg_resources
-import colorama
-import termcolor
+#import colorama
+#import termcolor
 import platform
 from distutils.dir_util import copy_tree
 
-colorama.init()
+#colorama.init()
 
 getPackages = pkg_resources.working_set
 getPackagesList = sorted(["{:s}=={:s}".format(one.key, one.version) for one in getPackages])
@@ -24,15 +24,11 @@ for each in getPackagesList:
 if len(notInstalled) >= 1:
 
     try:
-        print(
-            str(termcolor.colored(text="[Warning]:", color="red")) + "\nFollowing libraries not installed: " if len(
+        print("[Warning]:\nFollowing libraries not installed: " if len(
                 notInstalled) > 1 else "[Warning:]\nFollowing library not installed: ")
-        print("blizzardwrap wants to install these libraries " + str(
-            termcolor.colored(text=" ".join(notInstalled), color='blue')) if len(
-            notInstalled) > 1 else "blizzardwrap wants to install this library " + str(
-            termcolor.colored(text=" ".join(notInstalled), color='blue')))
-        whatToDo = input("Install or not? (" + str(termcolor.colored(text="Y", color="green")) + " or " + str(
-            termcolor.colored(text="N", color="red")) + "): ")[:3].upper()
+        print("blizzardwrap wants to install these libraries " + " ".join(notInstalled) if len(
+            notInstalled) > 1 else "blizzardwrap wants to install this library " + " ".join(notInstalled))
+        whatToDo = input("Install or not? Y or N: ")[:3].upper()
         if whatToDo == "YES" or whatToDo == "Y":
             if "Linux" or "linux" or "LINUX" in platform.platform().upper().split("-"):
                 os.system("python3 -m pip install " + " ".join(notInstalled))
@@ -47,13 +43,13 @@ if len(notInstalled) >= 1:
 
 
         elif whatToDo == "NO" or whatToDo == "N":
-            print(termcolor.colored(text="Manually download " + " ".join(notInstalled), color="blue"))
+            print("Manually download " + " ".join(notInstalled))
         else:
-            print(termcolor.colored(text="Invalid input...try again!", color="red"))
+            print("Invalid input...try again!")
     except:
-        print(termcolor.colored("Could'nt be installed...Please manually install them", color="red"))
+        print("Could'nt be installed...Please manually install them")
 else:
-    print(str(termcolor.colored(text="Everything is all set up!", color="blue")))
+    print("Everything is all set up!")
 '''
 try:
 	if "LINUX" in platform.platform().upper().split("-"):
