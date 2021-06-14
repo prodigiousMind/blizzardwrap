@@ -22,7 +22,7 @@ class Base64:
 
     # for decoding
     def decode(self):
-        stn = self.string
+        stn = self.string if self.string[-1]=="=" else self.string+"=="
 
         # return decoded string
         return base64.b64decode(stn).decode('ascii')
