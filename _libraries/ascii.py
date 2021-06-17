@@ -24,7 +24,7 @@ class Ascii:
         
         for _each in self.string:
             try:  
-                print(_each)
+                
                 if _each.isdigit():
                     decodedS.append(format(chr(int(_each))))
                 else:
