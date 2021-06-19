@@ -16,7 +16,7 @@ class hexadecimal:
         encoded = stn.encode("utf-8").hex()
 
         # return encoded hexadecimal string
-        return " ".join([encoded[one:one+2] for one in range(0,len(encoded),2)])
+        return "0x"+"".join([encoded[one:one+2] for one in range(0,len(encoded),2)])
 
     # method for decoding
     def decode(self):
@@ -25,6 +25,7 @@ class hexadecimal:
 
             # split and then make pair of two
             self.string =''.join(self.string.split())
+            stn=str(self.string) if self.string[1]!="x" else self.string[2:]
             stn = self.string
             stn = ' '.join([stn[e:e + 2] for e in range(0, len(str(stn)), 2)])
             temp = bytes.fromhex(stn)
