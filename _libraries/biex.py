@@ -26,7 +26,7 @@ class hexadecimal:
             # split and then make pair of two
             self.string =''.join(self.string.split())
             stn=str(self.string) if self.string[1]!="x" else self.string[2:]
-            stn = self.string
+            
             stn = ' '.join([stn[e:e + 2] for e in range(0, len(str(stn)), 2)])
             temp = bytes.fromhex(stn)
             temp = temp.decode('ascii')
